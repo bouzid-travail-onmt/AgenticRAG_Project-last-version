@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/static/css/main.c668e19f.css",
+    "main.js": "/static/js/main.e6399ac3.js",
+    "static/media/وزارة الإدماج الاقتصادي والمقاولة الصغرى والتشغيل والكفاءات.png": "/static/media/وزارة الإدماج الاقتصادي والمقاولة الصغرى والتشغيل والكفاءات.eb69ad32c71f5eca432c.png",
+    "static/media/logo_direction.jpg": "/static/media/logo_direction.5ed08ff3a9ccc855b095.jpg",
+    "index.html": "/index.html",
+    "main.c668e19f.css.map": "/static/css/main.c668e19f.css.map",
+    "main.e6399ac3.js.map": "/static/js/main.e6399ac3.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c668e19f.css",
+    "static/js/main.e6399ac3.js"
+  ]
+}
