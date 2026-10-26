@@ -1,0 +1,54 @@
+.logs-section {
+  margin-top: 20px;
+  background-color: #111827;
+  color: #e5e7eb;
+  border-radius: 8px;
+  padding: 10px 15px;
+  height: 200px;
+  overflow-y: auto;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  font-family: "Fira Code", monospace;
+  font-size: 14px;
+  transition: all 0.3s ease-in-out;
+}
+
+.logs-section h4 {
+  color: #60a5fa;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.log-line {
+  padding: 3px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.log-info { color: #9ca3af; }
+.log-success { color: #22c55e; }
+.log-warning { color: #fbbf24; }
+.log-error { color: #ef4444; }
+
+.log-empty {
+  text-align: center;
+  color: #6b7280;
+  font-style: italic;
+}
+.btn-logs-toggle {
+  background-color: #1f2937;
+  color: #93c5fd;
+  border: 1px solid #2563eb;
+  padding: 6px 12px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-logs-toggle:hover {
+  background-color: #2563eb;
+  color: white;
+}
+

@@ -1,0 +1,575 @@
+.viewdata-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.viewdata-panel {
+  background: #181a20;
+  color: #f5f6f8;
+  width: 90%;
+  max-width: 1000px;
+  border-radius: 16px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+}
+
+.viewdata-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #2b6cb0;
+  padding: 14px 20px;
+  border-bottom: 1px solid #1f2937;
+}
+
+.viewdata-header h2 {
+  font-size: 20px;
+  color: #fff;
+}
+
+.close-btn {
+  background: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.close-btn:hover {
+  transform: scale(1.1);
+  color: #ff4b4b;
+}
+
+.data-type-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 10px;
+  padding: 15px;
+  border-bottom: 1px solid #2f3445;
+}
+
+.data-type-buttons button {
+  padding: 10px 16px;
+  border: none;
+  background: #2b6cb0;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  min-width: 160px;
+}
+
+.data-type-buttons button:hover {
+  background: #225d9f;
+}
+
+.data-content {
+  padding: 15px;
+  flex: 1;
+  overflow: hidden;
+}
+
+.scrollable-list {
+  max-height: 400px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+}
+
+.file-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.file-card {
+  background: linear-gradient(145deg, #1f2432, #222836);
+  border: 1px solid #2f3445;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  padding: 12px 16px;
+  transition: all 0.2s ease;
+}
+
+.file-card:hover {
+  background: linear-gradient(145deg, #242a3c, #1d2230);
+  transform: translateY(-2px);
+}
+
+.file-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.file-main {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+  word-break: break-word;
+}
+
+.file-date {
+  font-size: 12px;
+  color: #9aa0b3;
+}
+
+.file-name {
+  font-weight: 600;
+  color: #fff;
+  font-size: 15px;
+}
+
+.file-actions-horizontal {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  margin-left: 20px;
+}
+
+.file-actions-horizontal button {
+  background: #2c3145;
+  border: none;
+  color: #d6d9e0;
+  border-radius: 8px;
+  padding: 6px 9px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.file-actions-horizontal button:hover {
+  background: #3e4560;
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.file-actions-horizontal .delete-btn {
+  background: #3c2a2a;
+}
+
+.file-actions-horizontal .delete-btn:hover {
+  background: #b83232;
+  color: #fff;
+}
+
+/* Zone des métadonnées */
+.file-preview {
+  margin-top: 10px;
+  background: #11141d;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 13px;
+  color: #9ae6b4;
+  max-height: 200px;
+  overflow-y: auto;
+  animation: fadeIn 0.3s ease;
+}
+
+.file-preview h4 {
+  color: #4fd1c5;
+  margin-bottom: 6px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* URL Preview */
+.url-preview {
+  background: #f8f9fa;
+  border-radius: 10px;
+  padding: 15px;
+  margin-top: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.clickable-url {
+  display: inline-block;
+  color: #007bff;
+  font-weight: 500;
+  text-decoration: underline;
+  word-break: break-all;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.clickable-url:hover {
+  color: #0056b3;
+  text-decoration: none;
+}
+
+.close-url-btn {
+  background: none;
+  border: none;
+  color: red;
+  margin-top: 10px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* Prévisualisation maximisée */
+.file-preview.maximized {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  border-radius: 0;
+  max-height: 100vh;
+  overflow: hidden;
+}
+
+.preview-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.zoom-controls {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.zoom-controls button {
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: none;
+  background: #2b6cb0;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.zoom-controls button:hover {
+  background: #225d9f;
+}
+
+.pdf-fullscreen-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  flex-direction: column;
+}
+
+.pdf-toolbar {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+  background: rgba(20, 20, 20, 0.95);
+  border-bottom: 1px solid #333;
+}
+
+.pdf-toolbar .close-pdf {
+  color: white;
+  background: #d9534f;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.pdf-toolbar .close-pdf:hover {
+  background: #c9302c;
+}
+
+.pdf-viewer-container {
+  flex: 1;
+  overflow: hidden;
+  background: #222;
+}
+.text-viewer-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  color: #111;
+  z-index: 1002;
+  display: flex;
+  flex-direction: column;
+}
+
+.text-toolbar {
+  display: flex;
+  justify-content: flex-end;
+  background: #f5f5f5;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.text-viewer-container {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+  font-family: "Fira Code", "Courier New", monospace;
+  background: #fff;
+}
+
+/* 🧠 JSON coloration */
+.json-preview-block {
+  background: #fff;
+  color: #333;
+  font-size: 14px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
+.json-key {
+  color: #d14;
+}
+
+.json-string {
+  color: #1a73e8;
+}
+
+.json-number {
+  color: #098658;
+}
+
+.json-boolean {
+  color: #c71585;
+}
+
+.json-null {
+  color: #777;
+}
+
+/* 📄 TXT */
+.txt-preview-block {
+  background: #fff;
+  color: #111;
+  font-size: 14px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+/* 📊 Excel Viewer Styles */
+
+.excel-viewer-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.97);
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.excel-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  gap: 10px;
+}
+
+.excel-toolbar label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+}
+
+.excel-viewer-container {
+  flex: 1;
+  overflow: auto;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.excel-preview-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  min-width: 600px;
+}
+
+.excel-preview-table th,
+.excel-preview-table td {
+  border: 1px solid #ddd;
+  padding: 8px 12px;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.excel-preview-table th {
+  position: sticky;
+  top: 0;
+  background-color: #4a90e2;
+  color: white;
+  z-index: 1;
+  font-weight: 600;
+}
+
+.even-row {
+  background-color: #f9f9f9;
+}
+
+.odd-row {
+  background-color: #ffffff;
+}
+
+.excel-preview-table tr:hover {
+  background-color: #e6f7ff;
+}
+.excel-viewer-container {
+  flex: 1;
+  overflow: auto;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.excel-scroll-wrapper {
+  width: 100%;
+  overflow-x: auto; /* ✅ scroll horizontal */
+}
+
+.excel-preview-table {
+  width: max-content; /* ✅ garde toutes les colonnes visibles */
+  border-collapse: collapse;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.excel-scroll-wrapper {
+  width: 100%;
+  overflow-x: auto; /* ✅ scroll horizontal */
+  overflow-y: auto;
+}
+
+.excel-preview-table {
+  width: max-content; /* ✅ affiche toutes les colonnes */
+  border-collapse: collapse;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 14px;
+}
+
+/* ================================ */
+/* 📈 SECTION INDICATEURS - Style */
+/* ================================ */
+
+.indicators-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: #181a20;
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid #2f3445;
+}
+
+.indicators-section .search-input {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid #2f3445;
+  background: #1e2230;
+  color: #f5f6f8;
+  font-size: 14px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.indicators-section .search-input:focus {
+  border-color: #2b6cb0;
+  box-shadow: 0 0 6px rgba(43, 108, 176, 0.4);
+}
+
+.indicator-card {
+  background: linear-gradient(145deg, #1f2432, #222836);
+  border: 1px solid #2f3445;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  padding: 12px 16px;
+  transition: all 0.25s ease;
+  color: #e0e2e8;
+}
+
+.indicator-card:hover {
+  background: linear-gradient(145deg, #242a3c, #1d2230);
+  transform: translateY(-2px);
+}
+
+.indicator-json {
+  background: #11141d;
+  color: #9ae6b4;
+  border-radius: 8px;
+  padding: 10px;
+  font-family: "Fira Code", monospace;
+  font-size: 13px;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  border: 1px solid #2f3445;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.pagination button {
+  background: #2b6cb0;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.pagination button:hover:not(:disabled) {
+  background: #225d9f;
+}
+
+.pagination button:disabled {
+  background: #2f3445;
+  color: #888;
+  cursor: not-allowed;
+}
+
+.pagination span {
+  color: #cbd5e0;
+  font-size: 14px;
+}
+

@@ -1,0 +1,67 @@
+# =========================
+# Core Web Framework
+# =========================
+fastapi==0.110.0
+uvicorn[standard]==0.27.1
+starlette==0.36.3
+
+# =========================
+# Security & Auth
+# =========================
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+cryptography==42.0.5
+
+# =========================
+# SSE (Server-Sent Events)
+# =========================
+sse-starlette==1.6.5
+
+# =========================
+# MongoDB & GridFS
+# =========================
+pymongo==4.6.2
+dnspython==2.6.1
+gridfs==0.0.0  # fourni par pymongo (ne sera pas installé séparément)
+
+# =========================
+# Elasticsearch
+# =========================
+elasticsearch==8.12.1
+
+# =========================
+# Data Processing
+# =========================
+pandas==2.2.1
+numpy==1.26.4
+openpyxl==3.1.2
+PyPDF2==3.0.1
+
+# =========================
+# NLP / RAG / Vector Store
+# =========================
+sentence-transformers==2.6.1
+langchain==0.1.16
+langchain-community==0.0.32
+langchain-huggingface==0.0.3
+faiss-cpu==1.7.4
+
+# =========================
+# HTTP Client
+# =========================
+requests==2.31.0
+
+# =========================
+# Logging
+# =========================
+loguru==0.7.2
+
+# =========================
+# Configuration & Utils
+# =========================
+python-dotenv==1.0.1
+
+# =========================
+# Ollama Client
+# =========================
+ollama==0.1.7

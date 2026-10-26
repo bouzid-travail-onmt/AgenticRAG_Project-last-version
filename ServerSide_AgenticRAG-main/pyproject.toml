@@ -1,0 +1,73 @@
+[project]
+name = "rag-system-es"
+version = "0.1.0"
+description = "Chatbot RAG basé sur des données institutionnelles"
+authors = [
+    { name = "onmt", email = "bouzid.travail.onmt@outlook.fr" }
+]
+
+# ⚠️ CRITIQUE : verrouillage Python
+requires-python = ">=3.9,<3.11"
+
+dependencies = [
+    # Core API
+    "fastapi>=0.110.0",
+    "uvicorn[standard]>=0.27.1",
+    "pydantic>=2.6.0",
+
+    # HTTP / Utils
+    "requests>=2.31.0",
+    "httpx>=0.27.0",
+    "loguru>=0.7.2",
+
+    # Data
+    "pandas>=2.2.1",
+    "numpy<2.0",
+
+    # NLP / RAG
+    "transformers==4.35.2",
+    "sentence-transformers==2.6.1",
+    "langchain==0.1.16",
+    "langchain-community==0.0.32",
+    "langchain-huggingface==0.0.3",
+    "faiss-cpu==1.7.4",
+
+    # Databases
+    "pymongo>=4.6.2",
+    "dnspython>=2.6.1",
+    "elasticsearch==8.12.1",
+
+    # Files
+    "PyPDF2>=3.0.1",
+    "openpyxl>=3.1.2",
+
+    # Security
+    "python-jose[cryptography]>=3.3.0",
+    "passlib[bcrypt]>=1.7.4",
+    "cryptography>=42.0.5",
+
+    # SSE
+    "sse-starlette>=1.6.5",
+
+    # Ollama
+    "ollama>=0.1.7",
+
+    # Config
+    "python-dotenv>=1.0.1"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4",
+    "black>=24.3",
+    "pylint>=3.0",
+    "ipdb>=0.13"
+]
+
+[tool.black]
+line-length = 88
+target-version = ["py310"]
+
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"

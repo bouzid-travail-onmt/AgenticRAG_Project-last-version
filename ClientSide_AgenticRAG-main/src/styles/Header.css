@@ -1,0 +1,22 @@
+.app-header {
+  display: flex;
+  justify-content: space-between; /* logo gauche et droite */
+  align-items: center;
+  padding: 15px 30px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* ombre légère pour effet pro */
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo-left img {
+  height: 100px; /* ajusté pour un bon rendu */
+  object-fit: contain;
+}
+
+.logo-right img {
+  height: 80px; /* légèrement plus petit pour équilibre */
+  object-fit: contain;
+}

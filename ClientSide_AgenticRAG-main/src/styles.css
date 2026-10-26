@@ -1,0 +1,135 @@
+.app-container {
+  display: flex;
+  height: 100vh;
+  background: #f8f9fa;
+  font-family: Arial, sans-serif;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  background: #f1f1f1;
+  padding: 1rem;
+  border-right: 1px solid #ddd;
+}
+.new-chat-btn {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 1rem;
+  background: #0078d4;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+.history p {
+  padding: 5px;
+  cursor: pointer;
+}
+.history p:hover {
+  background: #e0e0e0;
+}
+
+/* Main content */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 10px;
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+}
+.logo {
+  height: 50px;
+}
+
+/* ChatView */
+.chat-view {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+.message {
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 10px;
+}
+.bot {
+  background: #e1f5fe;
+  align-self: flex-start;
+}
+.user {
+  background: #dcedc8;
+  align-self: flex-end;
+}
+
+/* Input */
+.message-input {
+  display: flex;
+  padding: 10px;
+  border-top: 1px solid #ddd;
+  background: #fff;
+}
+.message-input input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+.message-input button {
+  margin-left: 10px;
+  padding: 10px 15px;
+  background: #0078d4;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Mobile header with hamburger */
+@media (max-width: 768px) {
+  .mobile-header {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background: #1e1e2f;
+    color: white;
+  }
+
+  .hamburger-btn {
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
+
+  .sidebar {
+    display: none; /* cacher par défaut */
+  }
+
+  .sidebar.open {
+    display: flex; /* afficher quand open */
+  }
+
+  .app-container {
+    flex-direction: column;
+  }
+
+  .main-content {
+    margin-left: 0; /* pas de sidebar */
+    width: 100%;
+    height: 100%;
+  }
+
+  .chat-container {
+    flex: 1;
+    height: calc(100vh - 50px); /* espace total - mobile header */
+  }
+}
